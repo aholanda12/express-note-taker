@@ -1,15 +1,17 @@
+// Variables
 const path = require("path");
 const router = require("express").Router()
 const fs = require("fs")
 let notesData = [];
 
+// Get function retrieves notes and renders them to the sidebar
 router.get("/notes", function(req, res){
-  // res.sendFile(path.join(__dirname, "./db/db.json"))
 notesData = fs.readFileSync("./db/db.json", "utf8")
 notesData = JSON.parse(notesData)
 res.json(notesData)
 })
 
+// Post function allows for new notes to be created and added to the array
 router.post("/notes", function(req, res){
   notesData = fs.readFileSync("./db/db.json", "utf8")
   notesData = JSON.parse(notesData)
@@ -22,6 +24,7 @@ router.post("/notes", function(req, res){
   res.json(JSON.parse(notesData))
 })
 
+// Delete function rewrites the array minus the id of the deleted note
 router.delete("/notes/:id", (req, res) => {
   notesData = fs.readFileSync("./db/db.json", "utf8")
   notesData = JSON.parse(notesData)
@@ -35,4 +38,5 @@ router.delete("/notes/:id", (req, res) => {
   res.json(JSON.parse(notesData))
 });
 
+// Export
 module.exports = router

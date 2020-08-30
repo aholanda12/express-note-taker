@@ -20,7 +20,8 @@ This application allows users to create and save notes to themselves. A user wil
 * [Questions](#Questions)
 
 ## Installation
-Install express in your terminal. Then type in 'node server.js'. Open your local host to see 
+Install express in your terminal. Then type in 'node server.js'. Open your local host to see the app.
+Additionally, [here is a link to the deployed Heroku app.](https://safe-thicket-42616.herokuapp.com/notes)
 
 ## Usage
 This app allows you to make notes and keep track of them.
